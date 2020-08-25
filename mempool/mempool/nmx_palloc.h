@@ -46,7 +46,7 @@ void nmx_destroy_pool (nmx_pool_t *pool);
 
 void nmx_reset_pool (nmx_pool_t *pool);
 
-void *nmx_palloc (nmx_pool_t *pool, size_t size);
+void *nmx_palloc(nmx_pool_t *pool, size_t size);
 
 void *nmx_pnalloc (nmx_pool_t *pool, size_t size);
 

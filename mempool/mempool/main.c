@@ -9,7 +9,9 @@ int main(){
     int i=0;
 
     for(i=0;i<10000;i++){
-
+        if(i%100 == 0) {
+            printf("%d/%d\n", i, 10000);
+        }
         nmx_pcalloc (pool,800 * 10);
 
     }
