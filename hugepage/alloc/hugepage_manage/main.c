@@ -102,7 +102,7 @@ int main(int argc, char** argv){
 	for(i=0; i<TEST_LEN; i++)
 		test_data[i] = 'a'+i;
     
-	printf("test_data:%s\n",test_data);
+	printf("test_data:%s(%p)\n",test_data,test_data);
 	
 	//after malloc heaps' state
 	show_heaps_state();	
