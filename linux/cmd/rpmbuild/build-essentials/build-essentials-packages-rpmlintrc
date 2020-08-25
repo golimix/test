@@ -1,0 +1,3 @@
+addFilter("suse-filelist-empty")
+addFilter("explicit-lib-dependency")
+addFilter("devel-dependency")

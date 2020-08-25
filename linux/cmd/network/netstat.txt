@@ -1,0 +1,10 @@
+# Copyright (C) Rong Tao @Sylincom Beijing, 2019年 06月 14日 星期五 09:06:25 CST. 
+
+netstat - 显示网络连接，路由表，接口状态，伪装连接，网络链路信息和组播成员组。
+
+We have used the netstat program many times throughout the text. This program serves multiple purposes:
+• It shows the status of networking endpoints. We showed this in Section 5.6(See 8.3.6), when we followed the status of our endpoint as we started our client and server.
+• It shows the multicast groups that a host belongs to on each interface. The -ia flags are the normal way to show this, or the -g flag under Solaris 2.x.
+• It shows the per-protocol statistics with the -s option. We showed this in Section 8.13(See 8.6.13), when looking at the lack of flow control with UDP.
+• It displays the routing table with the -r option and the interface information with the -i option. We showed this in Section 1.9(See 7.1.9), where we used netstat to discover the topology of our network.
+There are other uses of netstat and most vendors have added their own features. Check the man page on your system.

@@ -1,0 +1,2 @@
+/work/workspace/test/cmake/libs/static-shared/CMakeFiles/acc_lib_shared.dir
+/work/workspace/test/cmake/libs/static-shared/CMakeFiles/acc_lib_static.dir

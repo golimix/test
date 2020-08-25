@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/work/workspace/test/cmake/helloworld-cpp/src/show.cc
+stdio.h
+-
+
+/work/workspace/test/cmake/helloworld-cpp/vos/vos.cc
+stdio.h
+-
+vos.h
+/work/workspace/test/cmake/helloworld-cpp/vos/vos.h
+
+/work/workspace/test/cmake/helloworld-cpp/vos/vos.h
+

@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/work/workspace/test/openssl/hello/src/server/server.c
+stdio.h
+-
+string.h
+-
+openssl/evp.h
+-
+openssl/x509.h
+-
+openssl/ssl.h
+-
+openssl/pem.h
+-
+openssl/err.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+dlfcn.h
+-
+unistd.h
+-
+

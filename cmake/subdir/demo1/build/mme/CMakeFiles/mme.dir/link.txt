@@ -1,0 +1,2 @@
+/usr/bin/ar cq libmme.a  CMakeFiles/mme.dir/mme.c.o
+/usr/bin/ranlib libmme.a

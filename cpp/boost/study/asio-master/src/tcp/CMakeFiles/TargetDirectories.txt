@@ -1,0 +1,2 @@
+/work/workspace/test/cpp/boost/study/asio-master/src/tcp/CMakeFiles/client.dir
+/work/workspace/test/cpp/boost/study/asio-master/src/tcp/CMakeFiles/server.dir

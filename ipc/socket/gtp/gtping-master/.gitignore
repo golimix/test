@@ -1,0 +1,12 @@
+# gtping/.gitignore
+gtping
+*.o
+autom4te.cache
+*~
+.deps
+Makefile
+config.h
+config.log
+config.status
+stamp-h1
+configure.in
