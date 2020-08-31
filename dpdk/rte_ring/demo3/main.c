@@ -11,7 +11,6 @@ struct data_struct {
     char data[0];
 };
 
-int nr_of_queue_node = 4096;
 
 struct async_ring *ring = NULL;
 
@@ -77,7 +76,7 @@ int main(int argc,char *argv[])
     pthread_t penqueue1,penqueue2,penqueue3;
     pthread_t pdequeue1,pdequeue2,pdequeue3;
     
-    ring = async_ring_create("test",nr_of_queue_node, 0);
+    ring = async_ring_create("test",1024, 0);
 
     pthread_create(&penqueue1, NULL, enqueue_ring, NULL);
 //    pthread_create(&penqueue2, NULL, enqueue_ring, NULL);

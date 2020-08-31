@@ -65,11 +65,13 @@ int main(int argc, char *argv[])
 
     while(1)
     {        
+        
         if((n = recvfrom(sockfd, recvline, MAXLINE, 0, NULL, &servlen)) < 0)
         {
             perror("recvfrom error");
             break;
         } else {
+            //printf("Recv len %d, %d/%d\n", n, npkg, nb_recvpkg);
             nbyte += n;
             if(npkg++ > nb_recvpkg) {
                 break;
