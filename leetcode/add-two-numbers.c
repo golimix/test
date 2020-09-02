@@ -25,11 +25,62 @@ struct ListNode {
 	struct ListNode *next;
 };
 
-struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
-		
+struct ListNode* __addTwoNumbers(struct ListNode* l1, struct ListNode* l2, int pre){
+	//如果都是空，返回空
+	if(l1 == NULL && l2 == NULL && pre != 1) {
+		return NULL;
+	}
+	//有一个不为空，分配内存
+	struct ListNode* newnode = malloc(sizeof(struct ListNode));
+	int val = ((l1?l1->val:0) + (l2?l2->val:0) + pre);
+	int prefix = val>=10?1:0;
+	val %= 10;
+	newnode->val = val;
+
+	//printf("%d + %d = %d ... %d\n", l1?l1->val:0, l2?l2->val:0, val, prefix);
+
+	newnode->next = __addTwoNumbers(l1?l1->next:NULL, l2?l2->next:NULL, prefix);
+	
+	return newnode;
+}
+
+struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
+	return __addTwoNumbers(l1,l2, 0);
+}
+
+struct ListNode i1 = {2,NULL};
+struct ListNode i2 = {1,NULL};
+struct ListNode i3 = {1,NULL};
+
+struct ListNode jj1 = {2,NULL};
+struct ListNode jj2 = {3,NULL};
+struct ListNode jj3 = {4,NULL};
+struct ListNode jj4 = {5,NULL};
+
+struct ListNode *l1, *l2;
+
+void show_list(struct ListNode *l1)
+{
+	struct ListNode *list = l1;
+	if(l1) {
+		while(list) {
+			printf("%d ", list->val);
+			list = list->next;
+		}
+		printf("\n");
+	}
 }
 
 int main() 
 {
-	
+	l1 = &i1; i1.next = &i2; i2.next = &i3;
+	l2 = &jj1; jj1.next = &jj2; jj2.next = &jj3; jj3.next = &jj4;
+
+	show_list(l1);
+	show_list(l2);
+
+	struct ListNode* list = NULL;
+	list = addTwoNumbers(l1, l2);
+
+	show_list(list);
 }
