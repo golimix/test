@@ -14,6 +14,7 @@
  */
 #include <vlib/vlib.h>
 #include <vlib/unix/unix.h>
+#include <vlib/thread.h>
 #include <math.h>
 
 int
