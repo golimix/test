@@ -43,6 +43,7 @@ set interface state local0 up
 
 comment { 创建环回地址 }
 create loopback interface
+set interface ip address loop0 127.0.0.1/8
 set interface state loop0 up
 
 comment { DPDK相关配置、查询 }
