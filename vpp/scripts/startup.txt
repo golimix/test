@@ -7,6 +7,9 @@ comment {
 
 comment { 设置网卡IP地址 }
 set interface ip address dpdk0 10.170.7.169/24 
+comment {
+set interface ip address dpdk1 10.170.6.169/24
+}
 
 comment { 设置网卡MAC地址 }
 comment {
@@ -31,6 +34,7 @@ set interface rx-placement interface queue 1 worker 0
 
 comment { 启动网卡 [up|down|punt|enable] }
 set interface state dpdk0 up
+set interface state dpdk1 up
 
 comment { 设置路由，根据实际情况决定 }
 ip route add 10.170.6.0/24 via 10.170.7.254
