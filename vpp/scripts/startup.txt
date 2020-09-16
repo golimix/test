@@ -43,25 +43,33 @@ comment { 开启混杂模式  }
 set interface promiscuous on dpdk0
 
 comment { 启动local0口 }
+comment {
 set interface state local0 up
+}
 
 comment { 创建环回地址 }
+comment {
 create loopback interface
 set interface ip address loop0 127.0.0.1/8
 set interface state loop0 up
+}
 
 comment { DPDK相关配置、查询 }
+comment {
 show dpdk buffer
 show dpdk physmem
 show dpdk version
+}
 
 comment { DPDK内存测试 }
+comment {
 test dpdk buffer allocate 1024
 test dpdk buffer
 test dpdk buffer free 1024
+}
 
 comment { 显示有用信息 }
-show version
+comment { show version }
 comment { 查看所有插件 }
 comment {
 show plugins
