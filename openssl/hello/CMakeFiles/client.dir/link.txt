@@ -1,1 +1,0 @@
-/usr/bin/cc     -rdynamic CMakeFiles/client.dir/src/client/client.c.o  -o client -lssl -lcrypto 

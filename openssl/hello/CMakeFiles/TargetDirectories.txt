@@ -1,4 +1,0 @@
-/work/workspace/test/openssl/hello/CMakeFiles/edit_cache.dir
-/work/workspace/test/openssl/hello/CMakeFiles/client.dir
-/work/workspace/test/openssl/hello/CMakeFiles/rebuild_cache.dir
-/work/workspace/test/openssl/hello/CMakeFiles/server.dir
