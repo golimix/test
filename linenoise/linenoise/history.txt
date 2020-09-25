@@ -1,0 +1,9 @@
+ls
+hello
+hello there
+ls
+list
+ls
+exit
+quit
+ls
