@@ -1,6 +1,9 @@
-
-
-/* Copyright (C) Rong Tao @Sylincom Beijing, 2019年 06月 14日 星期五 09:06:14 CST. */
+/**
+ *  实现 ICMP ping功能，检测 目的 IP地址通路，并计算时延
+ *  
+ *  作者： 荣涛
+ *  日期： 2020年10月12日
+ */
 #include <stdio.h>
 #include <signal.h>
 #include <arpa/inet.h>
@@ -20,6 +23,8 @@
 #include <stdint.h>
 #include <pthread.h>
 
+#include "icmpping.h"
+
 #ifndef offsetof
 #define offsetof(type, member)    ( (int) & ((type*)0) -> member )
 #endif
@@ -38,8 +43,8 @@
 #define ICMP_LOG_ERR(fmt...)    fprintf(stderr, fmt);
 
 typedef enum {
-    __ICMP_PING_FAIL = 0,
-    __ICMP_PING_SUCC,
+    __ICMP_PING_FAIL = ICMPPING_FAIL,
+    __ICMP_PING_SUCC = ICMPPING_SUCC,
 }icmp_ping_rlst_t;
 
 /* type of icmp ping */
@@ -392,27 +397,4 @@ int icmp_ping(const char *ipv4, unsigned int timeout, int ntry, int (*log)(const
     
     return ping->rslt;
 }
-
-
-int main(int argc, char * argv[])
-{
-
-    if (argc < 2)
-    {
-        ICMP_LOG_ERR("Usage: %s hostname/IP address\n\r", argv[0]);
-        return (-1);
-    }
-    long int latency;
-
-
-    int rslt = icmp_ping(argv[1], 1, 3, NULL, &latency);
-    if(rslt == ICMP_PING_SUCC)
-        printf("ping \033[1;32m%s\033[m is OK. latency = %ld microseconds\n", argv[1], latency);
-    else
-        printf("ping \033[1;31m%s\033[m is not OK.\n", argv[1]);
-
-    
-    return 0;
-}
-
 
