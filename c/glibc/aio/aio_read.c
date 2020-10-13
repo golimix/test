@@ -29,8 +29,6 @@ int main(int argc,char **argv)
         perror("test.txt");
     }
  
- 
- 
     //将rd结构体清空
     bzero(&rd,sizeof(rd));
  
@@ -55,7 +53,7 @@ int main(int argc,char **argv)
 //  循环等待异步读操作结束
     while(aio_error(&rd) == EINPROGRESS)
     {
-        printf("第%d次\n",++couter);
+        printf("第%d次: %s\n",++couter, rd.aio_buf);
     }
     //获取异步读返回值
     ret = aio_return(&rd);

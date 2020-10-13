@@ -24,7 +24,8 @@ int main(int argc,char **argv)
  
     //置零wr结构体
     bzero(&wr,sizeof(wr));
- 
+
+    //追加写
     fd = open("test.txt",O_WRONLY | O_APPEND);
     if(fd < 0)
     {

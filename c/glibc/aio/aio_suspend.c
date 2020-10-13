@@ -26,19 +26,14 @@ int main(int argc,char **argv)
     //cblist链表
     struct aiocb *aiocb_list[2];
  
- 
- 
     fd = open("test.txt",O_RDONLY);
     if(fd < 0)
     {
         perror("test.txt");
     }
  
- 
- 
     //将rd结构体清空
     bzero(&rd,sizeof(rd));
- 
  
     //为rd.aio_buf分配空间
     rd.aio_buf = malloc(BUFFER_SIZE + 1);
@@ -63,7 +58,7 @@ int main(int argc,char **argv)
 //  循环等待异步读操作结束
     while(aio_error(&rd) == EINPROGRESS)
     {
-        printf("第%d次\n",++couter);
+        printf("第%d次， %s\n",++couter, rd.aio_buf);
     }
  
     printf("我要开始等待异步读事件完成\n");
