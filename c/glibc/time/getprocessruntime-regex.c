@@ -152,6 +152,7 @@ int main(int argc, char *argv[])
     while(1) {
         sleep(1);
         get_process_runtime(getpid(), argv[0], &tr);
+        get_process_runtime(1, "systemd", &tr);
         printf("running time %d-%d:%d:%d\n", tr.tm_day, tr.tm_hour, tr.tm_min, tr.tm_sec);
     }
 }
