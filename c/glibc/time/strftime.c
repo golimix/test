@@ -177,6 +177,7 @@ size_t strftime (char *s, size_t size, const char *template, const struct tm *br
 
 int main()
 {
+#if 1
     time_t time = 1;
     struct tm *t = localtime(&time);
     
@@ -196,6 +197,7 @@ int main()
     printf("tm_zone = %s:%s\n", t->tm_zone, t2->tm_zone);
     
     
+    printf("----------------------\n");
     char str[1024];
     // strftime(str, 1024, 
             // "%A %a %B %b %C %c \n"\
@@ -217,7 +219,8 @@ int main()
     strptime(str, 
             "%A %a %B %b %C %c %%\n",
             &t3);
-    
+
+            
     
     printf("tm_sec = %d:%d\n", t->tm_sec, t3.tm_sec);
     printf("tm_min = %d:%d\n", t->tm_min, t3.tm_min);
@@ -230,6 +233,27 @@ int main()
     printf("tm_isdst = %d:%d\n", t->tm_isdst, t3.tm_isdst);
     printf("tm_gmtoff = %d:%d\n", t->tm_gmtoff, t3.tm_gmtoff);
     printf("tm_zone = %s:%s\n", t->tm_zone, t3.tm_zone);
+
+#endif
+
+    printf("----------------------\n");
+    /* 将字符串转化为 tm 结构 */
+    struct tm t4, *tp;
+    tp = &t4;
+    memset(&t4, 0, sizeof(t4));
+    strptime("335-19:01:43", "%j-%H:%M:%S\n", &t4);
+    
+    printf("tm_sec = %d:%d\n", tp->tm_sec, t4.tm_sec);
+    printf("tm_min = %d:%d\n", tp->tm_min, t4.tm_min);
+    printf("tm_hour = %d:%d\n", tp->tm_hour, t4.tm_hour);
+    printf("tm_mday = %d:%d\n", tp->tm_mday, t4.tm_mday);
+    printf("tm_mon = %d:%d\n", tp->tm_mon, t4.tm_mon);
+    printf("tm_year = %d:%d\n", tp->tm_year, t4.tm_year);
+    printf("tm_wday = %d:%d\n", tp->tm_wday, t4.tm_wday);
+    printf("tm_yday = %d:%d\n", tp->tm_yday, t4.tm_yday);
+    printf("tm_isdst = %d:%d\n", tp->tm_isdst, t4.tm_isdst);
+    printf("tm_gmtoff = %d:%d\n", tp->tm_gmtoff, t4.tm_gmtoff);
+    printf("tm_zone = %s:%s\n", tp->tm_zone, t4.tm_zone);
     
     return 0;
 }
