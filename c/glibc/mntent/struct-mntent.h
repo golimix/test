@@ -91,15 +91,23 @@ functions.
 
 #include <fstab.h>
 
-struct mntent{
-    char *mnt_fsname;
-    char *mnt_dir;
-    char *mnt_type; //mntent.h
-    char *mnt_opts;
-    
+//struct mntent{
+//    char *mnt_fsname;
+//    char *mnt_dir;
+//    char *mnt_type; //mntent.h
+//    char *mnt_opts;
+//    
+//};
+
+
+struct mntent {
+   char *mnt_fsname;   /* name of mounted file system */
+   char *mnt_dir;      /* file system path prefix */
+   char *mnt_type;     /* mount type (see mntent.h) */
+   char *mnt_opts;     /* mount options (see mntent.h) */
+   int   mnt_freq;     /* dump frequency in days */
+   int   mnt_passno;   /* pass number on parallel fsck */
 };
-
-
 
 
 
