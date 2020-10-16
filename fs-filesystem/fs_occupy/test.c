@@ -18,27 +18,5 @@ int main(void)
 {
     printf("\n-------------------------------------\n");
     fs_storage_occupy(fs_display);
-    printf("\n-------------------------------------\n");
-    fs_storage_occupy(fs_display);
-    printf("\n-------------------------------------\n");
-    fs_storage_occupy(fs_display);
-    printf("\n-------------------------------------\n");
-    fs_storage_occupy(fs_display);
-    printf("\n-------------------------------------\n");
-    fs_storage_occupy(fs_display);
-    printf("\n-------------------------------------\n");
-    fs_storage_occupy(fs_display);
-    printf("\n-------------------------------------\n");
-    fs_storage_occupy(fs_display);
-    printf("\n-------------------------------------\n");
-    fs_storage_occupy(fs_display);
-    printf("\n-------------------------------------\n");
-    fs_storage_occupy(fs_display);
-    printf("\n-------------------------------------\n");
-    fs_storage_occupy(fs_display);
-    printf("\n-------------------------------------\n");
-    fs_storage_occupy(fs_display);
-    printf("\n-------------------------------------\n");
-    fs_storage_occupy(fs_display);
 }
 
