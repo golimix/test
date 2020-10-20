@@ -3,7 +3,8 @@ MODULE_NAME = ptsTalkKerMod
 $(MODULE_NAME)-objs := ptsTalkMod.o
 obj-m := $(MODULE_NAME).o
 #else
-KERNEL_DIR=/lib/modules/`uname -r`/build
+#KERNEL_DIR=/lib/modules/`uname -r`/build
+KERNEL_DIR=/lib/modules/3.10.0-693.el7.x86_64/build
 MODULEDIR := $(shell pwd)
 
 .PHONY:modules

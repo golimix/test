@@ -1,1 +1,0 @@
-cmd_/work/workspace/test/driver/tty-pty-tts/tell-peer/ptsTalkKerMod/ptsTalkKerMod.o := ld -m elf_x86_64   -r -o /work/workspace/test/driver/tty-pty-tts/tell-peer/ptsTalkKerMod/ptsTalkKerMod.o /work/workspace/test/driver/tty-pty-tts/tell-peer/ptsTalkKerMod/ptsTalkMod.o ; scripts/mod/modpost /work/workspace/test/driver/tty-pty-tts/tell-peer/ptsTalkKerMod/ptsTalkKerMod.o

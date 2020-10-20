@@ -19,7 +19,8 @@ obj-m	:= tiny_tty.o tiny_serial.o
 
 else
 
-KERNELDIR ?= /lib/modules/$(shell uname -r)/build
+#KERNELDIR ?= /lib/modules/$(shell uname -r)/build
+KERNELDIR ?= /lib/modules/3.10.0-693.el7.x86_64/build
 PWD       := $(shell pwd)
 
 default:
