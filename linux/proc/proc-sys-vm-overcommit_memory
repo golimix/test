@@ -31,3 +31,31 @@ OVERCOMMIT_NEVER
 OVERCOMMIT_GUESS、OVERCOMMIT_ALWAYS 的情况下，这个项目没有意义。
 要求分配虚拟空间时，如果“整个系统中已经分配（Committed_AS）”的虚拟空间量
 超过“可分配虚拟空间量（CommitLimit）”，则分配失败。
+
+在redis中这样使用
+-----------------------------------------------
+#ifdef __linux__
+int linuxOvercommitMemoryValue(void) {
+    FILE *fp = fopen("/proc/sys/vm/overcommit_memory","r");
+    char buf[64];
+
+    if (!fp) return -1;
+    if (fgets(buf,64,fp) == NULL) {
+        fclose(fp);
+        return -1;
+    }
+    fclose(fp);
+
+    return atoi(buf);
+}
+
+void linuxMemoryWarnings(void) {
+    if (linuxOvercommitMemoryValue() == 0) {
+        serverLog(LL_WARNING,"WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.");
+    }
+    if (THPIsEnabled()) {
+        serverLog(LL_WARNING,"WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.");
+    }
+}
+#endif /* __linux__ */
+-----------------------------------------------
