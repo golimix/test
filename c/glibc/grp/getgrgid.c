@@ -45,11 +45,11 @@ the needed information, the error code ERANGE is returned and errno is set to ER
 
 int main()
 {
-    struct group *group = getgrgid(getgid());
+    struct group *_group = getgrgid(getgid());
     
-    printf("%s:%d:", group->gr_name, group->gr_gid);
+    printf("%s:%d:", _group->gr_name, _group->gr_gid);
     
-    char **members = group->gr_mem;
+    char **members = _group->gr_mem;
     
     int i = 0;
     while(members[i] != NULL)

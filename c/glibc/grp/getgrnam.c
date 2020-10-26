@@ -42,9 +42,40 @@ int main()
     
     struct group *g = getgrgid(getgid());
     
-    struct group *group = getgrnam(g->gr_name);
+    struct group *_group = getgrnam(g->gr_name);
+    if (_group == NULL) {
+        printf("getgrnam(\"%s\") failed\n", _group);
+
+        switch(errno) {
+            case EINTR://  A signal was caught.
+                printf("A signal was caught.\n");
+                break;
+            case EIO://    I/O error.
+                printf("I/O error.\n");
+                break;
+                
+            case EMFILE:// The maximum number (OPEN_MAX) of files was open already in the calling process.
+                printf("The maximum number (OPEN_MAX) of files was open already in the calling process.\n");
+                break;
+                
+            case ENFILE:// The maximum number of files was open already in the system.
+                printf("The maximum number of files was open already in the system.\n");
+                break;
+                
+            case ENOMEM:// Insufficient memory to allocate group structure.
+                printf("Insufficient memory to allocate group structure.\n");
+                break;
+                
+            case ERANGE:// Insufficient buffer space supplied.
+                printf("Insufficient buffer space supplied.\n");
+                break;
+        }
     
-    printf("%s:%d:%s\n", group->gr_name, group->gr_gid, group->gr_mem[0]);
+        return -1;
+    }
+
+    
+    printf("%s:%d:%s\n", _group->gr_name, _group->gr_gid, _group->gr_mem[0]);
     
     
     

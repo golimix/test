@@ -43,27 +43,28 @@ void endpwent (void) [Function]
 This function closes the internal stream used by getpwent or getpwent_r.
 
  */
-
+    
 #include <stdio.h>
 #include <pwd.h>
-
-int main()
-{
-    setpwent();
     
-    
-    struct passwd *passwd;
-
-    while((passwd = getpwent()) != NULL)
+    int main()
     {
-        printf("%s:%s:%d:%d:%s%s%s\n", 
-                passwd->pw_name, passwd->pw_passwd, passwd->pw_uid, 
-                passwd-> pw_gid, passwd->pw_gecos, passwd->pw_dir, passwd->pw_shell);
+        setpwent();
         
-        passwd = NULL;
+        
+        struct passwd *_passwd;
+    
+        while((_passwd = getpwent()) != NULL)
+        {
+            printf("%s:%s:%d:%d:%s:%s:%s\n", 
+                    _passwd->pw_name, _passwd->pw_passwd, _passwd->pw_uid, 
+                    _passwd->pw_gid, _passwd->pw_gecos, _passwd->pw_dir, _passwd->pw_shell);
+            
+            _passwd = NULL;
+        }
+        
+        endpwent();
+        
+        return 0;
     }
-    
-    endpwent();
-    
-	return 0;
-}
+

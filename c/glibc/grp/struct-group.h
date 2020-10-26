@@ -36,9 +36,15 @@
  */
 
 #include <grp.h>
-
-struct group{
-	char *gr_name;
-	gid_t gr_gid;
-	char **gr_mem;
+struct group {
+   char   *gr_name;       /* group name */
+   char   *gr_passwd;     /* group password */
+   gid_t   gr_gid;        /* group ID */
+   char  **gr_mem;        /* group members */
 };
+
+//struct group{
+//	char *gr_name;
+//	gid_t gr_gid;
+//	char **gr_mem;
+//};

@@ -43,12 +43,22 @@
 
 #include <pwd.h>
 
-struct passwd{
-	char *pw_name;
-	char *pw_passwd;
-	uid_t pw_uid;
-	gid_t pw_gid;
-	char *pw_gecos;
-	char *pw_dir;
-	char *pw_shell;
+struct passwd {
+   char   *pw_name;       /* username */
+   char   *pw_passwd;     /* user password */
+   uid_t   pw_uid;        /* user ID */
+   gid_t   pw_gid;        /* group ID */
+   char   *pw_gecos;      /* user information */
+   char   *pw_dir;        /* home directory */
+   char   *pw_shell;      /* shell program */
 };
+
+//struct passwd{
+//	char *pw_name;
+//	char *pw_passwd;
+//	uid_t pw_uid;
+//	gid_t pw_gid;
+//	char *pw_gecos;
+//	char *pw_dir;
+//	char *pw_shell;
+//};

@@ -43,15 +43,15 @@
 
 int main()
 {
-	struct passwd *passwd = getpwuid(getuid());
+	struct passwd *_passwd = getpwuid(getuid());
 
-	printf("pw_name = %s\n", passwd->pw_name);
-	printf("pw_passwd = %s\n", passwd->pw_passwd);
-	printf("pw_uid = %d\n", passwd->pw_uid);
-	printf(" pw_gid = %d\n", passwd-> pw_gid);
-	printf("pw_gecos = %s\n", passwd->pw_gecos);
-	printf("pw_dir = %s\n", passwd->pw_dir);
-	printf("pw_shell = %s\n", passwd->pw_shell);
+	printf("pw_name = %s\n", _passwd->pw_name);
+	printf("pw_passwd = %s\n", _passwd->pw_passwd);
+	printf("pw_uid = %d\n", _passwd->pw_uid);
+	printf(" pw_gid = %d\n", _passwd->pw_gid);
+	printf("pw_gecos = %s\n", _passwd->pw_gecos);
+	printf("pw_dir = %s\n", _passwd->pw_dir);
+	printf("pw_shell = %s\n", _passwd->pw_shell);
 
 	return 0;
 }

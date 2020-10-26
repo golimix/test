@@ -51,6 +51,7 @@ int main (void)
 	printf ("My uid is %d.\n", (int) (my_passwd->pw_uid));
 	printf ("My home directory is %s.\n", my_passwd->pw_dir);
 	printf ("My default shell is %s.\n", my_passwd->pw_shell);
+    
 	/* Get information about the default group ID. */
 	my_group = getgrgid (my_passwd->pw_gid);
 	if (!my_group)
@@ -63,6 +64,7 @@ int main (void)
 	printf ("My default group is %s (%d).\n",
 			my_group->gr_name, (int) (my_passwd->pw_gid));
 	printf ("The members of this group are:\n");
+    
 	members = my_group->gr_mem;
 	while (*members)
 	{
