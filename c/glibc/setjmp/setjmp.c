@@ -44,12 +44,12 @@ void do_command (void)
     if (fgets (buffer, 128, stdin) == NULL)
         abort_to_main_loop (-1);
     else
-        abort_to_main_loop (1);;
+        abort_to_main_loop (1);
 }
 
 int main (void)
 {
-    while (1)
+//    while (1)
     if (setjmp (main_loop))
         puts ("Back at main loop....");
     else
