@@ -47,6 +47,7 @@ int main()
 	 *	physical memory. This prevents Linux from paging 
 	 *	this memory to swap space, even if the
 	 *	program hasn't accessed it for a while.
+	 * 禁止系统将该内存分页至swap交换空间
 	 */
 	mlock(a+10, 10);
 

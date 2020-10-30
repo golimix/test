@@ -45,7 +45,11 @@ The pause function is declared in ‘unistd.h’.
 
 int main (void)
 {
+    ////pause - wait for signal
     pause();
+    //sudo kill 14 216910
+    
+    printf("------get a signal\n");
     
     return 0;
 }

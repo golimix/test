@@ -19,8 +19,10 @@
 /* Copyright (C) Rong Tao @Sylincom Beijing, 2019年 03月 07日 星期四 20:26:59 CST. */
 #include <sys/mman.h>
 
+//mlock, munlock, mlockall, munlockall - lock and unlock memory
 int mlock(const void *addr, size_t len);
 int munlock(const void *addr, size_t len);
 
+//mlock, munlock, mlockall, munlockall - lock and unlock memory
 int mlockall(int flags);
 int munlockall(void);
