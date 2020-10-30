@@ -39,3 +39,17 @@ struct itimerval
     /* Time to the next timer expiration.  */
     struct timeval it_value;
 };
+
+
+#ifdef __rtoax_debug
+
+struct itimerval {
+   struct timeval it_interval; /* next value */
+   struct timeval it_value;    /* current value */
+};
+
+struct timeval {
+   time_t      tv_sec;         /* seconds */
+   suseconds_t tv_usec;        /* microseconds */
+};
+#endif//__rtoax_debug

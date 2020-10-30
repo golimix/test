@@ -1,4 +1,5 @@
 #include <aio.h>
 
-int aio_read(struct aiocb *aiocbp);
+int aio_write(struct aiocb *aiocbp);
+
 

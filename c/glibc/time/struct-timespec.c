@@ -33,3 +33,11 @@ struct timespec{
 	long int tv_sec;
 	long int tv_nsec;
 };
+
+
+
+struct itimerspec {
+	struct timespec it_interval;
+	struct timespec it_value;
+};
+

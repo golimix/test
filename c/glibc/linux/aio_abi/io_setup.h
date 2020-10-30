@@ -2,6 +2,8 @@
 
 int io_setup(unsigned nr_events, aio_context_t *ctx_idp);
 
+//*** Glibc does not provide a wrapper function for this system call.   ***
+
 
 /* sys_io_setup:
  *	Create an aio_context capable of receiving at least nr_events.

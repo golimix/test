@@ -1,8 +1,10 @@
 
 #include <linux/aio_abi.h>          /* Defines needed types */
 
+//io_submit - submit asynchronous I/O blocks for processing
 int io_submit(aio_context_t ctx_id, long nr, struct iocb **iocbpp);
 
+//*** Glibc does not provide a wrapper function for this system call.   ***
 
 
 /* sys_io_submit:

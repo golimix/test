@@ -1,6 +1,7 @@
 #include <linux/aio_abi.h>          /* Defines needed types */
 
 int io_destroy(aio_context_t ctx_id);
+//*** Glibc does not provide a wrapper function for this system call.   ***
 
 
 typedef __kernel_ulong_t aio_context_t;

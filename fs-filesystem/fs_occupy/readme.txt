@@ -1,3 +1,10 @@
+
+NOTE:
+	0. *** 一个遍历文件系统的代码库： fs-filesystem/fs_occupy/ ***
+	1. *** Glibc检测文件系统修改记录： test/c/glibc/sys/fanotify ***
+	2. *** Glibc检测文件修改操作： test/c/glibc/sys/inotify
+
+
 获取文件系统挂载点，并根据挂载点查询文件系统的使用情况侧C语言程序
 
 分别使用了如下的系统调用接口

@@ -47,6 +47,7 @@ int main()
     signal(SIGALRM, printmsg);
     
     struct itimerval tick;
+    struct itimerval curr_value;
     
     tick.it_value.tv_sec = 1; //1s 后启动定时器
     tick.it_value.tv_usec = 0;
@@ -61,6 +62,14 @@ int main()
         printf("setitimer error, %s\n", strerror(errno));
         return -1;
     }
+
+
+    ret = getitimer(ITIMER_REAL, &curr_value);
+    printf("ret = %d-----------\n", ret);
+    printf("it_interval.tv_sec  = %ld\n", curr_value.it_interval.tv_sec);
+    printf("it_interval.tv_usec = %ld\n", curr_value.it_interval.tv_usec);
+    printf("it_value.tv_sec     = %ld\n", curr_value.it_value.tv_sec);
+    printf("it_value.tv_usec    = %ld\n", curr_value.it_value.tv_usec);
     
     printf("Wait.\n");
     

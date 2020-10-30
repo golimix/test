@@ -1,7 +1,10 @@
 
 #include <sys/inotify.h>
 
+//inotify_add_watch - add a watch to an initialized inotify instance
 int inotify_add_watch(int fd, const char *pathname, uint32_t mask);
+//On success, inotify_add_watch() returns a nonnegative watch descriptor.  On  error  -1  is  returned  and
+//       errno is set appropriately.
 
 
 

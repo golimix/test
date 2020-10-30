@@ -1,7 +1,10 @@
 #include <linux/aio_abi.h>          /* Defines needed types */
 
+//cancel an outstanding asynchronous I/O operation
 int io_cancel(aio_context_t ctx_id, struct iocb *iocb,
                     struct io_event *result);
+
+//*** Glibc does not provide a wrapper function for this system call.   ***
 
 
 /* sys_io_cancel:

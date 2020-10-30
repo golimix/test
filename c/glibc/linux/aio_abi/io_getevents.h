@@ -1,8 +1,11 @@
 #include <linux/aio_abi.h>         /* Defines needed types */
 #include <linux/time.h>            /* Defines 'struct timespec' */
 
+
 int io_getevents(aio_context_t ctx_id, long min_nr, long nr,
                 struct io_event *events, struct timespec *timeout);
+//*** Glibc does not provide a wrapper function for this system call.   ***
+
 
 
 /* io_getevents:

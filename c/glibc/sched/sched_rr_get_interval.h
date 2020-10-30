@@ -1,5 +1,6 @@
 #include <sched.h>
 
+//get the SCHED_RR interval for the named process
 int sched_rr_get_interval(pid_t pid, struct timespec * tp);
 
 

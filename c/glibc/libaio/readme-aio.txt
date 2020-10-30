@@ -1,0 +1,16 @@
+
+AIO目录
+--------------------------------------------------
+*** glibc liburing: test/c/glibc/liburing ***
+*** liburing: test/liburing ***
+*** libaio: test/libaio ***
+*** libaio: test/c/glibc/libaio ***
+*** linux aio_abi: test/c/glibc/linux/aio_abi ***
+
+参考文件
+--------------------------------------------------
+*** test/c/glibc/libaio/readme.h ***
+*** test/c/glibc/linux/aio_abi/readme.h ***
+*** test/c/glibc/aio/readme.h ***
+
+RToax
