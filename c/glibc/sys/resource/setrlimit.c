@@ -60,7 +60,7 @@ int demo_cpu_time_limit()
 	rl.rlim_cur = 1;
 	setrlimit (RLIMIT_CPU, &rl);
 	/* Do busy work. */
-	while (1);
+	while (1); //超出 CPU 时限(吐核)
 	return 0;
 }
 

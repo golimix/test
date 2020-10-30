@@ -3,4 +3,12 @@
 
 #include <unistd.h>
 
+//change root directory
 int chroot(const char *path);
+
+
+SYSCALL_DEFINE1(chroot, const char __user *, filename)
+{
+	return ksys_chroot(filename);
+}
+

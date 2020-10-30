@@ -43,4 +43,8 @@ int shmget(key_t key, size_t size, int shmflg);
 
 int segment_id = shmget (shm_key, getpagesize (), IPC_CREAT | S_IRUSR | S_IWUSER);
 
+SYSCALL_DEFINE3(shmget, key_t, key, size_t, size, int, shmflg)
+{
+	return ksys_shmget(key, size, shmflg);
+}
 

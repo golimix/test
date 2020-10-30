@@ -29,7 +29,7 @@ the old interface.
 
 
 */
-
+#if __rtoax_debug
 #include <sys/resource.h>
 #include <stdio.h>
 
@@ -50,3 +50,48 @@ int main()
     
 	return 0;
 }
+#endif //__rtoax_debug
+
+#include <sys/resource.h>
+#include <stdio.h>
+#include <unistd.h>
+
+// struct rlimit{
+    // rlim_t  rlim_cur;
+    // rlim_t  rlim_max;
+// };
+
+int demo_cpu_time_limit()
+{
+	struct rlimit rl;
+	/* Obtain the current limits. */
+	getrlimit (RLIMIT_CPU, &rl);
+	/* Set a CPU limit of 1 second. */
+	rl.rlim_cur = 1;
+	setrlimit (RLIMIT_CPU, &rl);
+	/* Do busy work. */
+	while (1); //超出 CPU 时限(吐核)
+	return 0;
+}
+
+int main()
+{
+#if 1
+	demo_cpu_time_limit();
+#endif
+
+    struct rlimit rlimit, rlimit2;
+    
+    rlimit.rlim_cur = 12;
+    rlimit.rlim_max = 13;
+    
+    setrlimit(getpid(), &rlimit);
+    
+    getrlimit(getpid(), &rlimit2);
+
+    printf("rlim_cur = %d\n", rlimit2.rlim_cur);
+    printf("rlim_max = %d\n", rlimit2.rlim_max);
+    
+	return 0;
+}
+

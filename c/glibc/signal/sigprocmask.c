@@ -60,6 +60,7 @@ int main (void)
         if (flag)
         {
             //actions-if-not-arrived
+            printf("flag = 0.\n");
             flag = 0;
         }
         sigprocmask (SIG_UNBLOCK, &block_alarm, NULL); //非阻塞

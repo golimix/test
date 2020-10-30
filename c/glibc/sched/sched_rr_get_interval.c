@@ -33,14 +33,14 @@
 
 int main()
 {
-	struct timespec timespec;
-	int ret = sched_rr_get_interval(getpid(), &timespec);
+	struct timespec _timespec;
+	int ret = sched_rr_get_interval(getpid(), &_timespec);
 #if 0
 	struct timespec {
 		long    tv_sec;
 		long    tv_nsec;
 	};
 #endif
-	printf("%ld, %ld\n", timespec.tv_sec, timespec.tv_nsec);
+	printf("%ld, %ld\n", _timespec.tv_sec, _timespec.tv_nsec);
 
 }

@@ -45,3 +45,15 @@ mqd_t mq_open(const char *name, int oflag, mode_t mode, struct mq_attr *attr);
 //O_EXCL If  O_CREAT  was  specified  in oflag, and a queue with the given name already exists,
 //			then fail with the error EEXIST.
 //
+
+
+SYSCALL_DEFINE4(mq_open, const char __user *, u_name, int, oflag, umode_t, mode,
+		struct mq_attr __user *, u_attr)
+{
+	struct mq_attr attr;
+	if (u_attr && copy_from_user(&attr, u_attr, sizeof(struct mq_attr)))
+		return -EFAULT;
+
+	return do_mq_open(u_name, oflag, mode, u_attr ? &attr : NULL);
+}
+
