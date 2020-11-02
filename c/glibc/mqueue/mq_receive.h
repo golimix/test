@@ -12,6 +12,9 @@ ssize_t mq_receive(mqd_t mqdes, char *msg_ptr,
 #include <time.h>
 #include <mqueue.h>
 
+//从1970.01.01计算超时
+//timeout.tv_sec = time(NULL)+2;
+//n= mq_timedreceive(mqd, buffer, 1024, 0, &timeout);
 ssize_t mq_timedreceive(mqd_t mqdes, char *msg_ptr,
                         size_t msg_len, unsigned *msg_prio,
                         const struct timespec *abs_timeout);

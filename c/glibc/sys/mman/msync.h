@@ -1,13 +1,3 @@
-/* Copyright (C) Rong Tao @Sylincom Beijing, 2019年 06月 14日 星期五 09:05:27 CST. */
-/* Copyright (C) Rong Tao @Sylincom Beijing, 2019年 04月 02日 星期二 08:34:56 CST. */
-
-
-
-/**
- *	
- */
-
-
 /* NAME
  * msync - synchronize a file with a memory map
  *
