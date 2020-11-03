@@ -33,3 +33,26 @@ int msgget(key_t key, int oflag);
 //*	key：可以使ftok返回值，也可以是IPC_PROVATE
 //*	oflag：读写权限值的组合
 //*/
+
+SYSCALL_DEFINE2(msgget, key_t, key, int, msgflg)
+{
+	return ksys_msgget(key, msgflg);
+}
+
+long ksys_msgget(key_t key, int msgflg)
+{
+	struct ipc_namespace *ns;
+	static const struct ipc_ops msg_ops = {
+		.getnew = newque,
+		.associate = security_msg_queue_associate,
+	};
+	struct ipc_params msg_params;
+
+	ns = current->nsproxy->ipc_ns;
+
+	msg_params.key = key;
+	msg_params.flg = msgflg;
+
+	return ipcget(ns, &msg_ids(ns), &msg_ops, &msg_params);
+}
+
