@@ -4,6 +4,30 @@
 //setns - (再关联)reassociate thread with a namespace
 int setns(int fd, int nstype);
 
+//fd: argument  is  a  file  descriptor referring to one of the namespace entries in a /proc/[pid]/ns/ directory
+
+//0:                Allow any type of namespace to be joined.
+//CLONE_NEWIPC:     fd must refer to an IPC namespace.
+//CLONE_NEWNET:     fd must refer to a network namespace.
+//CLONE_NEWUTS:     fd must refer to a UTS namespace.
+
+//例如： nstype==CLONE_NEWIPC，编译运行结果如下：
+//
+// [root@localhost sched]# ./a.out /proc/self/ns/time ls
+// error setns.
+// [root@localhost sched]# ./a.out /proc/self/ns/ipc ls
+// a.out			  sched_getparam.c	    sched_rr_get_interval.man.txt  sched_yield.h
+// bits-sched.h		  sched_getparam.h	    sched_setaffinity.c		   sched_yield.man.txt
+// clone.h			  sched_get_priority_max.c  sched_setaffinity.h		   setns.c
+// clone.man.txt		  sched_get_priority_max.h  sched_setaffinity-redis.c	   setns.h
+// CPU_SETSIZE.c		  sched_get_priority_min.c  sched_setparam.c		   setns.man.txt
+// CPU_ZERO_SET_CLR_ISSET.c  sched_get_priority_min.h  sched_setparam.h		   struct-sched_param.h
+// demo-sched.c		  sched_getscheduler.c	    sched_setparam.man.txt	   type-cpu_set_t.h
+// namespace-readme.txt	  sched_getscheduler.h	    sched_setscheduler.c	   uapi-linux-sched.h
+// proc.man.5.txt		  sched.h		    sched_setscheduler.h	   unshare.c
+// sched_getaffinity.c	  sched_rr_get_interval.c   sched_setscheduler.man.txt	   unshare.h
+// sched_getaffinity.h	  sched_rr_get_interval.h   sched_yield.c		   unshare.man.txt
+
 
 
 

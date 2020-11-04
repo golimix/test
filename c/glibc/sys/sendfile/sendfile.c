@@ -33,6 +33,12 @@ int main (int argc, char* argv[])
 	int write_fd;
 	struct stat stat_buf;
 	off_t offset = 0;
+
+    if(argc<3) {
+        printf("%s [file-in] [file-out]\n", argv[0]);
+        exit(1);
+    }
+    
 	/* Open the input file. */
 	read_fd = open (argv[1], O_RDONLY);
 	/* Stat the input file to obtain its size. */
@@ -50,6 +56,9 @@ int main (int argc, char* argv[])
 	 *
 	 */
 	sendfile (write_fd, read_fd, &offset, stat_buf.st_size);
+
+    printf("sendfile: offset:%d, st_size:%d\n", offset, stat_buf.st_size);
+    
 	/* Close up. */
 	close (read_fd);
 	close (write_fd);

@@ -2,9 +2,15 @@
 #include <time.h>
 
 //get overrun count for a POSIX per-process timer
+//超时的泛滥次数，正常情况下返回0
 int timer_getoverrun(timer_t timerid);
 
 //Link with -lrt.
+
+//On success, timer_getoverrun() returns the overrun count of the specified timer; 
+//        this count may be  0  if no overruns have occurred.  
+//On failure, -1 is returned, and errno is set to indicate the error.
+
 
 /*
  * Get the number of overruns of a POSIX.1b interval timer.  This is to

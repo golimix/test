@@ -82,6 +82,17 @@ rongasdfasdf
 /*
  *	截断一个文件，如果文件大小大于规定大小，截断
  */
+//[root@localhost unistd]# echo "1234567890" > truncate.test
+//[root@localhost unistd]# more truncate.test 
+//1234567890
+//[root@localhost unistd]# ./a.out truncate.test 4
+//truncate.test:4
+//0
+//truncate.test:4
+//[root@localhost unistd]# more truncate.test 
+//1234
+//[root@localhost unistd]# 
+
 int main(int argc, char *argv[])
 {
     char *p = argv [1];
