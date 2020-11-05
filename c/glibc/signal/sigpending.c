@@ -56,12 +56,14 @@ int main (void)
     
     if (sigismember (&waiting_mask, SIGINT)) {
     /* User has tried to kill the process. */
+        printf("SIGINT\n");
     }
     else if (sigismember (&waiting_mask, SIGTSTP)) {
     /* User has tried to stop the process. */
+        printf("SIGTSTP\n");
     }
     
-    
+    while(1)sleep(1);
     
     return 0;
 }

@@ -7,7 +7,7 @@
 void pr_get_endian()
 {
     //有问题啊
-    int endian = -1; 
+    int endian; 
     prctl(PR_GET_ENDIAN, &endian, 0,0,0);
 
     switch(endian) {
@@ -19,6 +19,9 @@ void pr_get_endian()
             break;
         case PR_ENDIAN_PPC_LITTLE://	2	
             printf("PR_ENDIAN_PPC_LITTLE\n");
+            break;
+        default:
+            printf("unknown endian.%d\n", endian);
             break;
     }
 }
