@@ -7,3 +7,5 @@ $ tar -cf archive.tar /home/Christine/Project/*.*
 
 $ tar -zcf archive.tar.gz /home/Christine/Project/*.* 2>/dev/null
 
+#解压
+$ tar -xvf untar.tar.xz

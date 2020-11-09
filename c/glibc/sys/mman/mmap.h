@@ -41,4 +41,12 @@
 void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset);
 int munmap(void *addr, size_t length);
 
+//prot
+//---------------------------------------
+//PROT_EXEC  Pages may be executed.
+//PROT_READ  Pages may be read.
+//PROT_WRITE Pages may be written.
+//PROT_NONE  Pages may not be accessed.
+
+
 /* See NOTES for information on feature test macro requirements. */
