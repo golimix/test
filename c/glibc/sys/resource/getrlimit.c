@@ -76,16 +76,16 @@ int demo_cpu_time_limit()
 
 int main()
 {
-#if 1
+#if 0
 	demo_cpu_time_limit();
 #endif
 
-    struct rlimit rlimit, rlimit2;
+    struct rlimit _rlimit, rlimit2;
     
-    rlimit.rlim_cur = 12;
-    rlimit.rlim_max = 13;
+    _rlimit.rlim_cur = 12;
+    _rlimit.rlim_max = 13;
     
-    setrlimit(getpid(), &rlimit);
+    setrlimit(getpid(), &_rlimit);
     
     getrlimit(getpid(), &rlimit2);
 

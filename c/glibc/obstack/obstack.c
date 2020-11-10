@@ -39,6 +39,8 @@
 
 #define debug() printf("%d\n", __LINE__)
 
+
+
 int main()
 {
 	//有错误，再说吧，知道有这个GNU lib内存池就行了，先这样
