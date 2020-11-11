@@ -5,7 +5,6 @@
 #include <sys/time.h>
 
 
-
 #if 1
 #define debug()
 #else
@@ -78,6 +77,11 @@ void test_obstack()
 
 
 
+void test_vos(){
+
+}
+
+
 
 int main(int argc, char *argv[])
 {
@@ -95,11 +99,13 @@ int main(int argc, char *argv[])
         default:
             printf("Test mem size %u, loop times %u.\n", test_alloc_size, test_alloc_free_cnt);
             break;
-    }
+    }   
 
 
     test_malloc();
     test_obstack();
+    test_vos();
 
 }
+
 
