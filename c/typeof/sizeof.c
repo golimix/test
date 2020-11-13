@@ -19,5 +19,12 @@ int main()
 	printf("%d\n", sizeof(b.a));
 	printf("%d\n", sizeof(b.i));
 
+    char *c; 
+    long *l;
+    printf("sizeof c = %d\n", sizeof(c));
+    printf("sizeof *c = %d\n", sizeof(*c));
+    printf("sizeof l = %d\n", sizeof(l));
+    printf("sizeof *l = %d\n", sizeof(*l));
+
 	return 0;
 }
