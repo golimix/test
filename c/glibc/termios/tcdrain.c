@@ -87,6 +87,6 @@ EINVAL A bad value was supplied as the action argument.
 #include <termios.h>
 //串口：串行接口
 int tcsendbreak (int filedes, int duration);
-int tcdrain (int filedes);  //等待直到所有写入fd引用的对象的输出都被传输
-int tcflush (int filedes, int queue); //苏哈晴输入缓存
-int tcflow (int filedes, int action);   //挂起传输或接受
+//int tcdrain (int filedes);  
+//int tcflush (int filedes, int queue); 
+//int tcflow (int filedes, int action);   

@@ -25,3 +25,31 @@
 #include <termios.h>
 
 int cfsetspeed (struct termios *termios_p, speed_t speed);
+
+
+#include <stdio.h>
+#include <termios.h>
+
+//typedef unsigned int speed_t;
+
+//int cfsetospeed (struct termios *termios_p, speed_t speed);
+
+int main()
+{
+	struct termios t;
+
+	//tcgetattr(fileno(stdout), &t);
+
+    cfsetspeed(&t, 10);
+    
+	speed_t speedo = cfgetospeed(&t);
+
+	printf("%d\n", speedo);
+
+	speed_t speedi = cfgetispeed(&t);
+
+	printf("%d\n", speedi);
+
+	return 0;
+}
+

@@ -28,7 +28,7 @@
 
 //typedef unsigned int speed_t;
 
-speed_t cfgetospeed(const struct termios *p_termios);
+//speed_t cfgetospeed(const struct termios *p_termios);
 
 int main()
 {

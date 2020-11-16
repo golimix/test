@@ -27,7 +27,7 @@ returns −1.
 
 //typedef unsigned int speed_t;
 
-int cfsetospeed (struct termios *termios_p, speed_t speed);
+//int cfsetospeed (struct termios *termios_p, speed_t speed);
 
 int main()
 {
@@ -35,7 +35,7 @@ int main()
 
 	//tcgetattr(fileno(stdout), &t);
 
-    cfsetospeed(&t, 110);
+    cfsetospeed(&t, 10);
     
 	speed_t speedo = cfgetospeed(&t);
 
