@@ -28,7 +28,7 @@
 #endif
 
 #include "linux/linux.h"
-#include "freebsd/freebsd.h"
+//#include "freebsd/freebsd.h"
 #include "../ptrace.h"
 
 struct fd_array {
