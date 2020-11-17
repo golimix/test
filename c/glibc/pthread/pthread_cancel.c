@@ -29,7 +29,7 @@
  */
 #include <pthread.h>
 
-int pthread_cancel(pthread_t tid);
+//int pthread_cancel(pthread_t tid);
 
 /**
  *	Under normal circumstances, a thread terminates when it exits normally, either by

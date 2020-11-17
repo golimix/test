@@ -31,24 +31,6 @@
 
 #include <pthread.h>
 
-int pthread_join(pthread_t *tid, void **status);
-/**
- *  pthread_join 作为返回
- *
- *      荣涛 2018.10.16
- */
-int pthread_join(pthread_t *tid, void **retval);
-/**
- * 参数：
- * 		tid：线程ID
- * 		status：用户定义的指针，用来存储被等待线程的返回值。
- *
- *
- *	返回：
- *		成功：0
- *		错误：正的Exxx值
- */
-
 int main ()
 {
 	pthread_t thread1_id;

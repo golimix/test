@@ -29,6 +29,13 @@
  */
 
 #include <pthread.h>
+
+//*      一个线程可以使joinable（可汇合的，默认值），也可以是detached（脱离的），
+//*  当一个可汇合的线程终止时，他的线程ID和退出状态将留存到另一个线程对它调用
+//*  pthread_join。脱离的线程却像守护进程，当他们终止时，所有相关资源都被释放，
+//*  我们不能等待他们终止。如果一个线程需要知道另一个线程什么时候终止，那最好
+//*  保持第二个线程的可汇合状态。
+
 int pthread_detach (pthread_t tid);
 //Returns: 0 if OK, positive Exxx value on error
 

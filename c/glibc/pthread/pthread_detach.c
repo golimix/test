@@ -32,6 +32,30 @@
  */
 
 #include <pthread.h>
+#include <stdio.h>
 
-int pthread_detach(pthread_t tid);
+void* test_task_fn(void* unused)
+{
+    printf("test_task_fn.\n");
+
+    static int status = 12121;
+    
+    pthread_exit(&status);
+    return NULL;
+}
+/* The main program. */
+int main ()
+{
+    int *pstatus;
+    pthread_t thread_id;
+    
+    pthread_create(&thread_id, NULL, test_task_fn, NULL);
+
+    sleep(1);
+    pthread_detach(thread_id);
+//    pthread_join(thread_id, (void**)&pstatus);
+//    printf("pstatus = %d\n", *pstatus);
+    return 0;
+}
+
 

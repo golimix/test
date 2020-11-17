@@ -36,10 +36,10 @@
  *
  *	类似于进程中使用的signal
  */
-
-int pthread_cleanup_push(void (*function)(void *), void *arg);
-
-void pthread_cleanup_pop(int execute);
+//推和弹出线程取消清理处理程序
+//int pthread_cleanup_push(void (*function)(void *), void *arg);
+//
+//void pthread_cleanup_pop(int execute);
 
 
 #include <malloc.h>
@@ -47,11 +47,13 @@ void pthread_cleanup_pop(int execute);
 /* Allocate a temporary buffer. */
 void* allocate_buffer (size_t size)
 {
+    printf("allocate_buffer.\n");
 	return malloc (size);
 }
 /* Deallocate a temporary buffer. */
 void deallocate_buffer (void* buffer)
 {
+    printf("deallocate_buffer.\n");
 	free (buffer);
 }
 void do_some_work ()
@@ -67,4 +69,12 @@ void do_some_work ()
 	 * this actually performs the cleanup by calling
 	 * deallocate_buffer. */
 	pthread_cleanup_pop (1);
+    
+//    int status = 1;
+//    pthread_exit(&status);
+}
+
+int main()
+{
+    do_some_work ();
 }

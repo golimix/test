@@ -26,6 +26,34 @@
  *	而且pthread_join使用这个ID，每个线程使用pthread_self获取自身的线程ID。
  */	
 
-#include <pthread.h>
 
-pthread_t pthread_self(void);
+#include <pthread.h>
+#include <stdio.h>
+
+void* test_task_fn(void* unused)
+{
+    printf(">>pthread_self() = %ld\n", pthread_self());
+	printf(">>test_task_fn.\n");
+
+    static int status = 12121;
+    
+    printf(">>pthread_self() = %ld\n", pthread_self());
+    
+    pthread_exit(&status);
+	return NULL;
+}
+/* The main program. */
+int main ()
+{
+    int *pstatus;
+	pthread_t thread_id;
+    
+	pthread_create(&thread_id, NULL, test_task_fn, NULL);
+
+	pthread_join(thread_id, (void**)&pstatus);
+
+    printf("pthread_self() = %ld\n", pthread_self());
+	return 0;
+}
+
+
