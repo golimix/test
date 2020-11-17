@@ -1,4 +1,8 @@
+#include <malloc.h>
+#include <string.h>
+
 #include "nmx_palloc.h"
+#include "nmx_alloc.h"
 
 
 size_t nmx_pagesize = 0;

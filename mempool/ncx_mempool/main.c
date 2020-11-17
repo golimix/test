@@ -116,13 +116,13 @@ int main(int argc, char **argv)
 {
 	int i;
     
-    test_ctx_t ctx;
-
-    for(i=0;i<10003;i++) {
-        test_malloc_and_free(&ctx, 100+i);
-//        printf("-%d-\n",ctx.malloc_count);
-    }
-    printf("test malloc done.\n");
+//    test_ctx_t ctx;
+//
+//    for(i=0;i<10003;i++) {
+//        test_malloc_and_free(&ctx, 100+i);
+////        printf("-%d-\n",ctx.malloc_count);
+//    }
+//    printf("test malloc done.\n");
     
 	char *p;
 	size_t 	pool_size = 4096000;  //4M 

@@ -7,6 +7,10 @@
 #define LV_ERROR 8
 #define LV_ALERT 16
 
+#ifndef LOG_LEVEL
+#define LOG_LEVEL LV_ERROR
+#endif
+
 #define log(level, format, ...) \
 	do { \
 		if ( level >= LOG_LEVEL ) {\
