@@ -5,3 +5,5 @@
 *** test/memory/sysinfo.c	获取RAM利用率
 *** test/memory/malldump	内存转储 https://github.com/yodaos-project/malldump
 
+*** test/c/glibc/malloc	内存分配
+*** test/c/glibc/mcheck	内存检测

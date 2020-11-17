@@ -1,21 +1,12 @@
-/* 
- Copyright (C) Rong Tao @Beijing
-
- Permission is granted to copy, distribute and/or modify this document
- under the terms of the GNU Free Documentation License, Version 1.3
- or any later version published by the Free Software Foundation;
- with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
- Texts. A copy of the license is included in the section entitled ‘‘GNU
- Free Documentation License’’.
-   2019年 06月 20日 星期四 08:25:12 CST. 
-*/
-/* Copyright (C) Rong Tao @Sylincom Beijing, 2019年 06月 20日 星期四 08:25:06 CST. */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <mcheck.h>
 #include <errno.h>
 #include <string.h>
+
+struct test_struct{
+    int id;
+};
 
 void abortfun(enum mcheck_status mstatus)
 {
@@ -37,22 +28,32 @@ void abortfun(enum mcheck_status mstatus)
             printf("memory after the block was clobbered\n");
             break;
     }
+    exit(1); //这里不退出，将打印出backtrace
+    //    *** Error in `./a.out': double free or corruption (fasttop): 0x0000000001548030 ***
+    //    ======= Backtrace: =========
+    //    /usr/lib64/libc.so.6(+0x81299)[0x7f77bd17e299]
+    //    /usr/lib64/libc.so.6(+0x892f8)[0x7f77bd1862f8]
+    //    ./a.out[0x40082e]
+    //    /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f77bd11f555]
+    //    ./a.out[0x400669]
 }
 
 int main(int argc, char *argv[])
 {
-	char *p = NULL;
+	struct test_struct *p = NULL;
 
-	if(mcheck(abortfun) != 0)
+	if(mcheck_pedantic(abortfun) != 0)
 	{
 		fprintf(stderr, "mcheck:%s\n", strerror(errno));
 		return -1;
 	}
-	p = malloc(10);
+	p = malloc(sizeof(struct test_struct));
 	free(p);
 	printf("1st free finished.\n");
-//	free(p);
-//	printf("2nd free.\n");
+	free(p);
+	printf("2nd free.\n");
 
 	return 0;
 }
+
+

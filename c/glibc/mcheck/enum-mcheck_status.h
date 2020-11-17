@@ -14,9 +14,9 @@
 
 enum mcheck_status
 {
-	MCHECK_DISABLED = -1,	//consistency checking is not turned on
+	MCHECK_DISABLED = -1,	//consistency checking is not turned on 一致性检查未打开
 	MCHECK_OK,				//block is fine
-	MCHECK_FREE,			//block freed twice
-	MCHECK_HEAD,			//memory before the block was clobbered
-	MCHECK_TAIL,			//memory after the block was clobbered
+	MCHECK_FREE,			//block freed twice 
+	MCHECK_HEAD,			//memory before the block was clobbered 堆内存块的头部越界
+	MCHECK_TAIL,			//memory after the block was clobbered 堆内存块的尾部越界
 };
