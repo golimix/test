@@ -32,7 +32,10 @@
 #endif
 
 
-
+//madvise() 函数建议内核，在从 addr 指定的地址开始，长度等于 len 
+//参数值的范围内，该区域的用户虚拟内存应遵循特定的使用模式。
+//内核使用这些信息优化与指定范围关联的资源的处理和维护过程。如果使用 madvise() 
+//函数的程序明确了解其内存访问模式，则使用此函数可以提高系统性能。
 //madvise - give advice about use of memory
 int madvise(void *addr, size_t length, int advice);
 

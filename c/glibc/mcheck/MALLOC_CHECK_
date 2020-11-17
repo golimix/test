@@ -15,6 +15,8 @@ int main(int argc, char * argv[])
     return 0;
 }
 
+PS: *** 查看mallopt ***
+PS: *** 查看mallopt ***
 
 a. 直接运行时，不报错，进程"正常"退出；
 b. export MALLOC_CHECK_=1后，运行结果：

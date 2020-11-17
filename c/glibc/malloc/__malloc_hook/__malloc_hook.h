@@ -20,6 +20,8 @@
 #ifndef __MALLOC_HOOK_RONGTAO_H_
 #define __MALLOC_HOOK_RONGTAO_H_
 
+#include <sys/types.h>
 
+extern void *malloc (size_t __size);
 
 #endif /* <__MALLOC_HOOK_RONGTAO_H_> */

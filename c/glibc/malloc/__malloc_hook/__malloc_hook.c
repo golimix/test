@@ -33,8 +33,7 @@ static void *old_free_hook;
 /* Override initializing hook from the C library. */
 void (*__MALLOC_HOOK_VOLATILE __malloc_initialize_hook) (void) = my_init_hook;
 
-static void
-my_init_hook (void)
+static void my_init_hook(void)
 {
     old_malloc_hook = __malloc_hook;
     old_free_hook   = __free_hook;
@@ -42,8 +41,7 @@ my_init_hook (void)
     __free_hook     = new_free_hook;
 }
 
-static void *
-new_malloc_hook (size_t size)
+static void *new_malloc_hook(size_t size)
 {
     void *result;
     /* Restore all old hooks */
@@ -62,8 +60,7 @@ new_malloc_hook (size_t size)
     __free_hook     = new_free_hook;
     return result;
 }
-static void
-new_free_hook (void *ptr)
+static void new_free_hook(void *ptr)
 {
     /* Restore all old hooks */
     __malloc_hook   = old_malloc_hook;
