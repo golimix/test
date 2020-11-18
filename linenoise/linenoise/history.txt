@@ -7,3 +7,4 @@ ls
 exit
 quit
 ls
+help
