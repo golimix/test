@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <time.h>
 #include <stdlib.h>
-#include "../../thpool.h"
+#include "thpool.h"
 
 
 void sleep_2_secs(){
@@ -40,9 +40,10 @@ int main(int argc, char *argv[]){
 		return -1;
 	};
 
-	// thpool_destroy(thpool);
 
-	// sleep(1); // Sometimes main exits before thpool_destroy finished 100%
+    sleep(5); // Sometimes main exits before thpool_destroy finished 100%
+
+    thpool_destroy(thpool);
 
 	return 0;
 }

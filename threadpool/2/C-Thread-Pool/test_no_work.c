@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <time.h>
 #include <stdlib.h>
-#include "../../thpool.h"
+#include "thpool.h"
 
 
 int main(int argc, char *argv[]){

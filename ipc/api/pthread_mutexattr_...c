@@ -23,7 +23,7 @@
  */
 
 int pthread_mutexattr_init(pthread_mutexattr_t *mptr);
-int pthread_mutexattr_destory(pthread_mutexattr_t *mptr);
+int pthread_mutexattr_destroy(pthread_mutexattr_t *mptr);
 	//成功：返回0
 	//错误：-1
 

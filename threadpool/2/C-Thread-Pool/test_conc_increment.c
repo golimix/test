@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <time.h>
 #include <stdlib.h>
-#include "../../thpool.h"
+#include "thpool.h"
 
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 int sum=0;

@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <time.h>
 #include <stdlib.h>
-#include "../../thpool.h"
+#include "thpool.h"
 
 /* 
  * THIS TEST NEEDS TO BE TIMED TO BE MEANINGFULL
