@@ -30,7 +30,7 @@
  */
 
 int pthread_condattr_init(pthread_condattr_t *cptr);
-int pthread_condattr_destory(pthread_condattr_t *cptr);
+int pthread_condattr_destroy(pthread_condattr_t *cptr);
 	//成功：返回0
 	//错误：正的Exxx值
 

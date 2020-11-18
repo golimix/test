@@ -768,7 +768,7 @@ extern int pthread_mutex_unlock (pthread_mutex_t *__mutex)
      __THROWNL __nonnull ((1));
 
 
-/* Get the priority ceiling of MUTEX.  */
+/* Get the priority ceiling of MUTEX. 获取MUTEX的优先级上限。 */
 extern int pthread_mutex_getprioceiling (const pthread_mutex_t *
 					 __restrict __mutex,
 					 int *__restrict __prioceiling)
@@ -783,7 +783,7 @@ extern int pthread_mutex_setprioceiling (pthread_mutex_t *__restrict __mutex,
 
 
 #ifdef __USE_XOPEN2K8
-/* Declare the state protected by MUTEX as consistent.  */
+/* Declare the state protected by MUTEX as consistent. 将MUTEX保护的状态声明为一致。 */
 extern int pthread_mutex_consistent (pthread_mutex_t *__mutex)
      __THROW __nonnull ((1));
 # ifdef __USE_GNU

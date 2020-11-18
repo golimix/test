@@ -58,7 +58,7 @@ int pthread_rwlock_trywrlock(pthread_rwlock_t *rwptr);
  */
 int pthread_rwlock_init(pthread_rwlock_t *rwptr,
 						const pthread_rwlockattr_t *attr);
-int pthread_rwlock_destory(pthread_rwlock_t *rwptr);
+int pthread_rwlock_destroy(pthread_rwlock_t *rwptr);
 	//成功：0
 	//错误：Exxx
 

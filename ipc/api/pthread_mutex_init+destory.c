@@ -24,4 +24,4 @@
 
 int pthread_mutex_init(pthread_mutex_t *mptr, 
 						pthread_mutexattr_t *attr);
-int pthread_mutex_destory(pthread_mutex_t *mptr);
+int pthread_mutex_destroy(pthread_mutex_t *mptr);

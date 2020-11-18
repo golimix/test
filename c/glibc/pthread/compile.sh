@@ -1,3 +1,3 @@
 #!/bin/bash
 
-gcc $* -pthread
+gcc $* -pthread -lm
