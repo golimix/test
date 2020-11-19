@@ -38,7 +38,7 @@ void *enqueue_ring(void *arg)
         }
         data = malloc(512);
         if(async_ring_enqueue(ring, data) != 0) {
-            printf("Enqueue error.\n");
+//            printf("Enqueue error.\n");
         } else {
 
             enqueue_count++;
@@ -58,7 +58,7 @@ void *dequeue_ring(void *arg)
             continue;
         }
         if(async_ring_dequeue(ring, (void**)&data) != 0) {
-            printf("Dequeue error.\n");
+//            printf("Dequeue error.\n");
         } else {
 
             dequeue_count++;
@@ -79,8 +79,8 @@ int main(int argc,char *argv[])
     ring = async_ring_create("test",1024, 0);
 
     pthread_create(&penqueue1, NULL, enqueue_ring, NULL);
-//    pthread_create(&penqueue2, NULL, enqueue_ring, NULL);
-//    pthread_create(&penqueue3, NULL, enqueue_ring, NULL);
+    pthread_create(&penqueue2, NULL, enqueue_ring, NULL);
+    pthread_create(&penqueue3, NULL, enqueue_ring, NULL);
 
     pthread_create(&pdequeue1, NULL, dequeue_ring, NULL);
 

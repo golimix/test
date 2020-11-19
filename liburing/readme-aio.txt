@@ -6,6 +6,8 @@ AIO目录
 *** libaio: test/libaio ***
 *** libaio: test/c/glibc/libaio ***
 *** linux aio_abi: test/c/glibc/linux/aio_abi ***
+*** DPDK 20.05: test/dpdk/dpdk-20.05/lib/librte_ring
+*** DPDK: test/dpdk/rte_ring
 
 参考文件
 --------------------------------------------------
